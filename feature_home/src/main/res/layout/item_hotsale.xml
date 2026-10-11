@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="hotsaleDatas"
+            type="com.sy.feature_home.bean.ResGoodsDetail" />
+        <variable
+            name="srchttp"
+            type="String" />
+        <variable
+            name="goodsSale"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_corner_8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="2dp">
+
+        <ImageView
+            android:id="@+id/iv_goods"
+            imageUrl="@{srchttp+hotsaleDatas.image}"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="9dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{hotsaleDatas.title}"
+            android:textColor="#ff333333"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_goods"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="漫步者(EDIFIER)HECATE G2专 业版USB7.1声道游戏耳机电..." />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{hotsaleDatas.subtitle}"
+            android:textColor="#ff8d8d8d"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="麦克风吃鸡耳机带线控" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="@{hotsaleDatas.price.get(0)}"
+            android:textColor="#fffe3000"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+            tools:text="￥299.00" />
+
+        <TextView
+            android:id="@+id/tv_original_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@{hotsaleDatas.original_price}"
+            android:textColor="#ffbbbbbb"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_price"
+            app:layout_constraintLeft_toRightOf="@id/tv_price"
+            tools:text="￥389.00" />
+
+        <TextView
+            android:id="@+id/tv_sales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@{goodsSale}"
+            android:textColor="#ffbbbbbb"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_price"
+            tools:text="已售7" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

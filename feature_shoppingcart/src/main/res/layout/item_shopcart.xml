@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="data"
+            type="com.sy.feature_shoppingcart.bean.ResCartList" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white">
+
+        <CheckBox
+            android:id="@+id/cb_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:button="@drawable/checkbox_cart_selector"
+            android:checked="false"
+            app:buttonTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_goods_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="16dp"
+            imageUrl="@{url}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/cb_check"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="24dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{data.goods.title}"
+            tools:text="新加坡hegen新生儿240ml宽口奶瓶PPSU婴儿断奶神器仿母乳"
+            android:textColor="#ff333333"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@id/iv_goods_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_goods_image" />
+
+        <TextView
+            android:id="@+id/tv_sku"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="黑色"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginRight="15dp"
+            android:textColor="#ff8d8d8d"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="￥598.00"
+            android:textColor="#fff6380d"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <ImageView
+            android:id="@+id/iv_subtract"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="40dp"
+            android:src="@mipmap/icon_subtract_o"
+            app:layout_constraintBottom_toBottomOf="@id/iv_add"
+            app:layout_constraintRight_toLeftOf="@id/iv_add"
+            app:layout_constraintTop_toTopOf="@id/iv_add" />
+
+        <TextView
+            android:id="@+id/tv_select_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            app:layout_constraintLeft_toRightOf="@id/iv_subtract"
+            app:layout_constraintRight_toLeftOf="@id/iv_add"
+            app:layout_constraintTop_toTopOf="@id/iv_subtract" />
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="26dp"
+            android:layout_marginBottom="7dp"
+            android:src="@mipmap/icon_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,48 @@
+[versions]
+agp = "8.4.0"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+switchbutton = "2.1.0"
+material = "1.10.0"
+activity = "1.8.0"
+constraintlayout = "2.1.4"
+
+arouter="1.5.2"
+lifecycle="2.6.1"
+androidAutoSize="v1.2.1"
+okhttp="4.12.0"
+retrofit="2.11.0"
+glide="4.16.0"
+eventBus="3.3.1"
+security="1.0.0"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+switchbutton = { module = "com.kyleduo.switchbutton:library", version.ref = "switchbutton" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+liveData={group="androidx.lifecycle",name="lifecycle-livedata",version.ref="lifecycle"}
+viewModel={group="androidx.lifecycle",name="lifecycle-viewmodel",version.ref="lifecycle"}
+security={group="androidx.security",name="security-crypto",version.ref="security"}
+
+#一些第三方库
+arouter={group="com.alibaba",name="arouter-api",version.ref="arouter"}
+arouterCompiler={group="com.alibaba",name="arouter-compiler",version.ref="arouter"}
+androidAutoSize={group="com.github.JessYanCoding",name="AndroidAutoSize",version.ref="androidAutoSize"}
+okhttp={group="com.squareup.okhttp3",name="okhttp",version.ref="okhttp"}
+okhttpInterceptor={group="com.squareup.okhttp3",name="logging-interceptor",version.ref="okhttp"}
+retrofit={group="com.squareup.retrofit2",name="retrofit",version.ref="retrofit"}
+retrofitConverterGson={group="com.squareup.retrofit2",name="converter-gson",version.ref="retrofit"}
+glide={group="com.github.bumptech.glide",name="glide",version.ref="glide"}
+eventBus={group="org.greenrobot",name="eventbus",version.ref="eventBus"}
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+

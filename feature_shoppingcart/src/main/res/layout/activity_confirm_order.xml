@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="orderviewmodel"
+            type="com.sy.feature_shoppingcart.ui.pay.ConfirmOrderViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.pay.ConfirmOrderActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_back"
+            android:layout_width="68dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="10dp"
+            app:cardBackgroundColor="#ffffffff"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@mipmap/icon_back" />
+
+                <View
+                    android:id="@+id/v_line"
+                    android:layout_width="1dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#E7E7E7" />
+
+                <ImageView
+                    android:id="@+id/iv_shortcutkey"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/icon_shortcutkey" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_cart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="确认订单"
+            android:textColor="#ff333333"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_back">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_no_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="1"
+                        android:text="请选择收货地址" />
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginRight="14dp"
+                        android:onClick="@{()->orderviewmodel.onClickGoDeliveryAddress()}"
+                        android:src="@mipmap/iocn_more_black" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctl_default_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="9dp"
+                    android:paddingRight="14dp"
+                    android:paddingBottom="10dp"
+                    android:visibility="gone"
+                    android:background="@color/white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#F77422"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:paddingBottom="2dp"
+                        android:text="默认"
+                        android:textColor="#ffffffff"
+                        android:textSize="12sp"
+                        android:visibility="visible"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="@{orderviewmodel.provinceAndMunicipal}"
+                        tools:text="上海市 市辖区 浦东新区"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_default"
+                        app:layout_constraintLeft_toRightOf="@id/tv_default"
+                        app:layout_constraintTop_toTopOf="@id/tv_default" />
+
+                    <TextView
+                        android:id="@+id/tv_detailde_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@{orderviewmodel.detailAddress}"
+                        tools:text="陆家嘴金融服务广场"
+                        android:textColor="#ff333333"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_default" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{orderviewmodel.nameAndPhone}"
+                        tools:text="老孙 13800138000"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_detailde_address" />
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@mipmap/iocn_more_black"
+                        android:onClick="@{()->orderviewmodel.onClickGoDeliveryAddress()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctl_normal_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="9dp"
+                    android:paddingRight="14dp"
+                    android:paddingBottom="10dp"
+                    android:visibility="gone"
+                    android:background="@color/white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_province_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{orderviewmodel.provinceAndMunicipal}"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_detailde_address_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@{orderviewmodel.detailAddress}"
+                        android:textColor="#ff333333"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_province_city" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{orderviewmodel.nameAndPhone}"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_detailde_address_2" />
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@mipmap/iocn_more_black"
+                        android:onClick="@{()->orderviewmodel.onClickGoDeliveryAddress()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/address_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="ctl_default_address,ctl_normal_address,ll_no_address" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_goods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/address_barrier" />
+
+                <LinearLayout
+                    android:id="@+id/ll_remark"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_corner_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_goods">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="订单备注"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="建议留言前先与商家沟通"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctl_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_corner_8dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="18dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_remark">
+
+                    <TextView
+                        android:id="@+id/tv_order_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="商品金额"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/dispatch_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:text="运费"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_order_amount" />
+
+                    <TextView
+                        android:id="@+id/coupon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:text="优惠券"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dispatch_amount" />
+
+                    <TextView
+                        android:id="@+id/promo_discount_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:text="活动优惠"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coupon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{orderviewmodel.orderAmount}"
+                        tools:text="￥2999.00"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_order_amount" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{orderviewmodel.dispatchAmount}"
+                        tools:text="+￥0.00"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/dispatch_amount" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:text="暂无可用优惠券"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="14sp"
+                        app:layout_constraintRight_toLeftOf="@+id/iv_more_gray"
+                        app:layout_constraintTop_toTopOf="@id/coupon" />
+
+                    <ImageView
+                        android:id="@+id/iv_more_gray"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@mipmap/icon_more_gray"
+                        app:layout_constraintBottom_toBottomOf="@id/coupon"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/coupon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:text="@{orderviewmodel.promoDiscountFee}"
+                        tools:text="-￥0.00"
+                        android:textColor="#F6380D"
+                        android:textSize="14sp"
+                        app:layout_constraintRight_toLeftOf="@+id/iv_more_gray2"
+                        app:layout_constraintTop_toTopOf="@id/promo_discount_fee" />
+
+                    <ImageView
+                        android:id="@+id/iv_more_gray2"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@mipmap/icon_more_gray"
+                        app:layout_constraintBottom_toBottomOf="@id/promo_discount_fee"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/promo_discount_fee" />
+
+                    <View
+                        android:id="@+id/v_line_goods"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:background="#DADADA"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/promo_discount_fee" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:text="@{orderviewmodel.goodsSum}"
+                        tools:text="共1件"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp"
+                        app:layout_constraintRight_toLeftOf="@id/tv_total"
+                        app:layout_constraintTop_toTopOf="@id/tv_total" />
+
+                    <TextView
+                        android:id="@+id/tv_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:text="合计:"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp"
+                        app:layout_constraintRight_toLeftOf="@id/tv_total_pay_fee"
+                        app:layout_constraintTop_toTopOf="@id/tv_total_pay_fee" />
+
+                    <TextView
+                        android:id="@+id/tv_total_pay_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@{orderviewmodel.payFee}"
+                        tools:text="￥2999.00"
+                        android:textColor="#fff6380d"
+                        android:textSize="14sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v_line_goods" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_invoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_corner_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ctl_price">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="发票申请"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="无需开具发票"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_more_gray3"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/icon_more_gray" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{orderviewmodel.payFee}"
+                tools:text="￥2999.00"
+                android:textColor="#fff6380d"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_submit_order"
+                android:layout_width="122dp"
+                android:layout_height="34dp"
+                android:background="@drawable/bg_login_button"
+                android:gravity="center"
+                android:text="提交订单"
+                android:textColor="#ffffffff"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

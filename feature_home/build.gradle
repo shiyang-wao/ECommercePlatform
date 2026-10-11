@@ -1,0 +1,30 @@
+apply from: "../featureConfig.build.gradle"
+
+android {
+    namespace 'com.sy.feature_home'
+
+    defaultConfig {
+        if (rootProject.ext.isModule){
+            applicationId "com.sy.feature_home"
+        }
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    annotationProcessor libs.arouterCompiler
+
+    implementation project(":library_base")
+
+    implementation 'com.google.android.material:material:1.6.0'
+
+    implementation 'com.github.xiaohaibin:XBanner:androidx_v1.2.6' //这个老孙猜测是版本号有下划线的原因，不太支持libs这种引用
+}

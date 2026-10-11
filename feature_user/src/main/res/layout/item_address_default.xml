@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="14dp"
+        android:paddingTop="9dp"
+        android:background="@color/white"
+        android:paddingRight="14dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/tv_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#F77422"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="2dp"
+            android:text="默认"
+            android:textColor="#ffffffff"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/province_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            tools:text="上海市 市辖区 浦东新区"
+            android:textColor="#ff8d8d8d"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_default"
+            app:layout_constraintLeft_toRightOf="@id/tv_default"
+            app:layout_constraintTop_toTopOf="@id/tv_default" />
+
+        <TextView
+            android:id="@+id/tv_detailed_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            tools:text="陆家嘴金融服务广场"
+            android:textColor="#ff333333"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_default" />
+
+        <TextView
+            android:id="@+id/name_phome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="老孙 13800138000"
+            android:textColor="#ff8d8d8d"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_detailed_address" />
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@mipmap/icon_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

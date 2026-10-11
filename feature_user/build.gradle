@@ -1,0 +1,32 @@
+apply from: "../featureConfig.build.gradle"
+
+android {
+    namespace 'com.sy.feature_user'
+
+    defaultConfig {
+        if (rootProject.ext.isModule){
+            applicationId "com.sy.feature_user"
+        }
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.switchbutton
+
+    implementation 'com.github.gzu-liyujiang.AndroidPicker:Common:4.1.12'
+    implementation 'com.github.gzu-liyujiang.AndroidPicker:WheelView:4.1.12'
+    implementation 'com.github.gzu-liyujiang.AndroidPicker:AddressPicker:4.1.12'
+
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    annotationProcessor libs.arouterCompiler
+
+    implementation project(":library_base")
+}

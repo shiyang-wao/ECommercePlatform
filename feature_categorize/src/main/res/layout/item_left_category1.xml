@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="categoryfirst"
+            type="com.sy.feature_categorize.bean.ResCategory.ResFirstCategory" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="98dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="8dp">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="32dp"
+            android:layout_height="6dp"
+            android:src="@mipmap/icon_leftitembg"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+            app:layout_constraintBottom_toBottomOf="@id/tv_name"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="11dp"
+            android:text="@{categoryfirst.name}"
+            android:textColor="#333333"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="服饰鞋包" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

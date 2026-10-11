@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="addViewModel"
+            type="com.sy.feature_user.ui.address.add.AddAddressViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6"
+        tools:context=".ui.address.add.AddAddressActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ctl_base_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingRight="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_back"
+                android:layout_width="68dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="#ffffffff"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@mipmap/icon_back" />
+
+                    <View
+                        android:id="@+id/v_line"
+                        android:layout_width="1dp"
+                        android:layout_height="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="#E7E7E7" />
+
+                    <ImageView
+                        android:id="@+id/iv_shortcutkey"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/icon_shortcutkey" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_cart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="新增地址"
+                android:textColor="#ff333333"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_persion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="36dp"
+                android:text="收货人"
+                android:textColor="#ff333333"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_back" />
+
+            <EditText
+                android:id="@+id/et_persion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="42dp"
+                android:background="@null"
+                android:hint="请填写收货人姓名"
+                android:text="@={addViewModel.consignee}"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_persion"
+                app:layout_constraintLeft_toRightOf="@+id/tv_persion"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_persion" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#DADADA"
+                app:layout_constraintLeft_toLeftOf="@id/tv_persion"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_persion" />
+
+            <TextView
+                android:id="@+id/tv_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="36dp"
+                android:text="手机号"
+                android:textColor="#ff333333"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_persion" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="42dp"
+                android:background="@null"
+                android:hint="请输入手机号"
+                android:inputType="phone"
+                android:textSize="14sp"
+                android:text="@={addViewModel.mobile}"
+                app:layout_constraintBottom_toBottomOf="@id/tv_mobile"
+                app:layout_constraintLeft_toRightOf="@+id/tv_mobile"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_mobile" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#DADADA"
+                app:layout_constraintLeft_toLeftOf="@id/tv_mobile"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_mobile" />
+
+            <TextView
+                android:id="@+id/tv_province_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="36dp"
+                android:text="省市区"
+                android:textColor="#ff333333"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_mobile" />
+
+            <TextView
+                android:id="@+id/tv_province_city_res"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="42dp"
+                android:text="请选择省市区"
+                android:textColor="#BBBBBB"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_province_city"
+                app:layout_constraintLeft_toRightOf="@+id/tv_province_city"
+                app:layout_constraintRight_toLeftOf="@id/iv_more"
+                app:layout_constraintTop_toTopOf="@id/tv_province_city" />
+
+            <ImageView
+                android:id="@+id/iv_more"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@mipmap/iocn_more_black"
+                app:layout_constraintBottom_toBottomOf="@id/tv_province_city"
+                app:layout_constraintLeft_toRightOf="@+id/tv_province_city_res"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_province_city" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#DADADA"
+                app:layout_constraintLeft_toLeftOf="@id/tv_province_city"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_province_city" />
+
+            <TextView
+                android:id="@+id/tv_detailed_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="36dp"
+                android:text="详细地址"
+                android:textColor="#ff333333"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_province_city" />
+
+            <EditText
+                android:id="@+id/et_detailed_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginBottom="10dp"
+                android:background="@null"
+                android:gravity="left"
+                android:hint="请输入详细地址"
+                android:text="@={addViewModel.address}"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:maxLines="5"
+                android:minHeight="90dp"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/tv_detailed_address"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_detailed_address" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ctl_base_info">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:text="设为默认地址"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:id="@+id/switch_button"
+                android:layout_width="36dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="16dp"
+                app:kswAnimationDuration="300"
+                app:kswBackColor="@drawable/switch_track_color"
+                app:kswBackRadius="10dp"
+                app:kswThumbColor="@color/white"
+                app:kswThumbMargin="2dp"
+                app:kswThumbRadius="10dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="保存"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_login_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

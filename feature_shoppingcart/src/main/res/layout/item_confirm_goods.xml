@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_mode_distribution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="配送方式"
+            android:textColor="#ff333333"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_distribution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="快递物流"
+            android:textColor="#ff333333"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_mode_distribution"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_mode_distribution" />
+
+        <ImageView
+            android:id="@+id/iv_goods_image"
+            imageUrl="@{url}"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_mode_distribution" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Apple Watch Series7智能手表GPS款4毫米星光色铝金属表壳星光色运动型表..."
+            android:textColor="#ff333333"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@id/iv_goods_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_goods_image" />
+
+        <TextView
+            android:id="@+id/tv_sku"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="黑色"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginRight="10dp"
+            android:textColor="#ff8d8d8d"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="￥2999.00"
+            android:textColor="#ff333333"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sku" />
+
+        <TextView
+            android:id="@+id/tv_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4.5dp"
+            android:text="x 1"
+            android:textColor="#ffbbbbbb"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@id/tv_price"
+            app:layout_constraintTop_toTopOf="@id/tv_price" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,22 @@
+apply from: "../featureConfig.build.gradle"
+
+android {
+    namespace 'com.sy.feature_categorize'
+
+    defaultConfig {
+        if (rootProject.ext.isModule){
+            applicationId "com.sy.feature_categorize"
+        }
+    }
+}
+
+dependencies {
+
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    annotationProcessor libs.arouterCompiler
+
+    implementation project(":library_base")
+}

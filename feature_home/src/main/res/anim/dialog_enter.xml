@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/decelerate_interpolator"> <!-- 减速插值器：动画越来越慢，更自然 -->
+
+    <!-- 平移动画：从屏幕底部外滑入屏幕底部 -->
+    <translate
+        android:duration="300"
+        android:fromYDelta="100%p"
+        android:toYDelta="0" /> <!-- 结束位置：父容器顶部（即屏幕底部，完全显示） -->
+
+    <!-- 透明度动画：从透明到不透明，避免生硬 -->
+    <alpha
+        android:duration="300"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0" /> <!-- 结束透明度：完全不透明 -->
+
+</set>
