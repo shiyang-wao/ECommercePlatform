@@ -28,7 +28,11 @@ UI	RecyclerView（多 ViewType）、ViewPager2、NestedScrollView、自定义 Vi
 
 项目结构
 
-&#x20;``` 
+
+
+&#x20;```
+
+
 
 ECommercePlatform
 
@@ -46,7 +50,11 @@ ECommercePlatform
 
 └── network              # 网络层（Retrofit 封装、多态 JSON 解析）
 
-&#x20;``` 
+
+
+&#x20;```
+
+
 
 核心实现
 
