@@ -95,7 +95,7 @@ public class CartAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         // 1. 绑定商品图片（用Glide加载网络图片，需添加Glide依赖）
         String imageUrl = cart.getGoods().getImage(); // 商品主图
-        String Url = "https://shop.fzqq.fun" + imageUrl;
+        String Url = "https://shop.example.com" + imageUrl;
         binding.setUrl(Url);
         binding.setData(cart);
 

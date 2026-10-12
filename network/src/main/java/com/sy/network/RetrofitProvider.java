@@ -9,7 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitProvider {
-    private static final String BASE_URL = "http://shop.fzqq.fun/addons/shopro/";
+    private static final String BASE_URL = "http://shop.example.com/addons/shopro/";
     //单例模式这个静态成员变量得是私有的，只能通过provide()这个public方法去访问
     private static Retrofit mRetrofit;
     private static Retrofit mRetrofitDifAda;

@@ -10,7 +10,7 @@ public class HomeBannerData implements BaseBannerInfo {
     private  String imgUrl;
 
     public HomeBannerData(String imgUrl) {
-        this.imgUrl = "https://shop.fzqq.fun/"+imgUrl;
+        this.imgUrl = "https://shop.example.com/"+imgUrl;
     }
 
     @Override

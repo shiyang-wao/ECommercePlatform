@@ -36,7 +36,7 @@ public class HomeDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private List<ResHomeItem.ImageCubeItem> mCubeItemDatas = new ArrayList<>(); //方形图片的数据
     private List<ResGoodsDetail> mFeaturedDatas = new ArrayList<>(); //精选榜单的数据
     private List<ResGoodsDetail> mHotsaleDatas = new ArrayList<>(); //热销商品的数据
-    private static final String srchttp="https://shop.fzqq.fun/";
+    private static final String srchttp="https://shop.example.com/";
     private ItemHotsaleListener mListener;
 
     @NonNull

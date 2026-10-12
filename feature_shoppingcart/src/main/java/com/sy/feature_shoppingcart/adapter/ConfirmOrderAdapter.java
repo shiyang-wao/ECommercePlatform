@@ -42,7 +42,7 @@ public class ConfirmOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         // 1. 绑定商品图片（用Glide加载网络图片，需添加Glide依赖）
         String imageUrl = goodsListBean.getGoods().getImage(); // 商品主图
-        String Url = "https://shop.fzqq.fun" + imageUrl;
+        String Url = "https://shop.example.com" + imageUrl;
         binding.setUrl(Url);
 
         binding.tvDistribution.setText(goodsListBean.getDispatch_type_text());

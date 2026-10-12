@@ -44,7 +44,7 @@ public class ResGoodsMoreDetail {
      * type_text : 实体商品
      * dispatch_type_text : 快递物流
      * sku_prices : [{"id":45,"goods_sku_ids":"42","goods_sku_text":["白色"],"goods_id":17,"image":"","stock":1019,"stock_warning":null,"sales":1,"sn":"","weight":"0.00","cost_price":"120.00","original_price":"389.00","price":"299.00","status":"up","weigh":0,"createtime":"2022-10-13 15:59:25","updatetime":"2025-07-14 15:33:33","status_text":"上架"},{"id":46,"goods_sku_ids":"43","goods_sku_text":["黑色"],"goods_id":17,"image":"","stock":1027,"stock_warning":null,"sales":5,"sn":"","weight":"0.00","cost_price":"120.00","original_price":"389.00","price":"299.00","status":"up","weigh":0,"createtime":"2022-10-13 15:59:25","updatetime":"2025-07-14 15:33:33","status_text":"上架"},{"id":47,"goods_sku_ids":"44","goods_sku_text":["黄色"],"goods_id":17,"image":"","stock":1019,"stock_warning":null,"sales":1,"sn":"","weight":"0.00","cost_price":"120.00","original_price":"389.00","price":"299.00","status":"up","weigh":0,"createtime":"2022-10-13 15:59:25","updatetime":"2025-07-14 15:33:33","status_text":"上架"}]
-     * content : <p><img src="https://shop.fzqq.fun/uploads/20250225/6bbbac27de86ce8d4dd393191e9cb012.png" alt="" /><img src="https://shop.fzqq.fun/uploads/20250225/3037a1da005e2222b0995dd7a2d67d87.png" alt="" /><img src="https://shop.fzqq.fun/uploads/20250225/5bc7b606e1905c59f1a7b99be092afcd.png" alt="" /></p>
+     * content : <p><img src="https://shop.example.com/uploads/20250225/6bbbac27de86ce8d4dd393191e9cb012.png" alt="" /><img src="https://shop.example.com/uploads/20250225/3037a1da005e2222b0995dd7a2d67d87.png" alt="" /><img src="https://shop.example.com/uploads/20250225/5bc7b606e1905c59f1a7b99be092afcd.png" alt="" /></p>
      */
 
     private int id;
@@ -130,7 +130,7 @@ public class ResGoodsMoreDetail {
     }
 
     public String getImage() {
-        return "https://shop.fzqq.fun/"+image;
+        return "https://shop.example.com/"+image;
     }
 
     public void setImage(String image) {

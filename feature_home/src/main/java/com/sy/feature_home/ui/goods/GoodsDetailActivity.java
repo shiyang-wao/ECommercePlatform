@@ -366,7 +366,7 @@ public class GoodsDetailActivity extends BaseActivity<ActivityGoodsDetailBinding
 
         //直接关联数据到pager列表  在这里设置了两个viewpager，一个图片滑动，一个点击图片跳出的图片详情滑动，图片数据是一样的
         List<String> images = datas.getImages();
-        String baseUrl = "https://shop.fzqq.fun";
+        String baseUrl = "https://shop.example.com";
 
         //处理图片点击之后的事件，让详情呢个viewpager出现
         ImageFragment.imageClickListener imageClickListener = new ImageFragment.imageClickListener() {
