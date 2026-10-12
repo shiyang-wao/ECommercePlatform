@@ -1,5 +1,15 @@
 电商 App（E-Commerce Platform）
 
+运行截图
+
+| 首页 | 分类 | 商品详情 |
+| :---: | :---: | :---: |
+| ![首页](screenshots/home.jpg) | ![分类](screenshots/category.jpg) | ![详情](screenshots/detail.jpg) |
+
+| SKU 规格选择 | 购物车 | 确认订单 |
+| :---: | :---: | :---: |
+| ![SKU](screenshots/sku.jpg) | ![购物车](screenshots/cart.jpg) | ![订单](screenshots/order.jpg) |
+
 一个基于 组件化 + MVVM 架构的 Android 电商应用，覆盖首页、分类、购物车、订单、用户等核心模块，打通「浏览商品 → 选规格 → 加购 → 下单 → 支付」的完整交易链路。
 
 
